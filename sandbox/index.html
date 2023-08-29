@@ -1,31 +1,46 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-      * {
-        font-family: Montserrat, sans-serif;
-      }
-    </style>
-  </head>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-  <body>
-    <script type="module">
-      import '../src/sweetalert2.scss'
+    * {
+      font-family: Montserrat, sans-serif;
+    }
+  </style>
+</head>
 
-      import Swal from '../src/sweetalert2.js'
+<body>
+  <script type="module">
+    import '../src/sweetalert2.scss'
 
-      window.Swal = Swal
+    import Swal from '../src/sweetalert2.js'
 
+    window.Swal = Swal
+
+    Swal.fire({
+      text: 'This phone number is already in use. Please sign in to the account linked with this number.',
+      icon: 'success',
+      showCancelButton: true,
+      cancelButtonText: 'Sign in',
+      confirmButtonText: 'Close',
+      inputValidator: (value) => {
+        if (!value) {
+          return 'Should not be empty!'
+        }
+      },
+      didOpen: (modal) => {
+        console.log(modal)
+      },
+    }).then((result) => {
       Swal.fire({
-        title: 'Test modal with input',
-        html: 'custom <strong>content</strong>',
-        input: 'text',
-        icon: 'success',
-        showCloseButton: true,
+        text: 'This phone number is already in use. Please sign in to the account linked with this number.',
+        icon: 'warning',
         showCancelButton: true,
+        cancelButtonText: 'Sign in',
+        confirmButtonText: 'Close',
         inputValidator: (value) => {
           if (!value) {
             return 'Should not be empty!'
@@ -35,8 +50,58 @@
           console.log(modal)
         },
       }).then((result) => {
-        console.log(result)
+        Swal.fire({
+          text: 'This phone number is already in use. Please sign in to the account linked with this number.',
+          icon: 'question',
+          showCancelButton: true,
+          cancelButtonText: 'Sign in',
+          confirmButtonText: 'Close',
+          inputValidator: (value) => {
+            if (!value) {
+              return 'Should not be empty!'
+            }
+          },
+          didOpen: (modal) => {
+            console.log(modal)
+          },
+        }).then((result) => {
+          Swal.fire({
+            text: 'This phone number is already in use. Please sign in to the account linked with this number.',
+            icon: 'info',
+            showCancelButton: true,
+            cancelButtonText: 'Sign in',
+            confirmButtonText: 'Close',
+            inputValidator: (value) => {
+              if (!value) {
+                return 'Should not be empty!'
+              }
+            },
+            didOpen: (modal) => {
+              console.log(modal)
+            },
+          }).then((result) => {
+            Swal.fire({
+              text: 'This phone number is already in use. Please sign in to the account linked with this number.',
+              icon: 'error',
+              showCancelButton: true,
+              cancelButtonText: 'Sign in',
+              confirmButtonText: 'Close',
+              inputValidator: (value) => {
+                if (!value) {
+                  return 'Should not be empty!'
+                }
+              },
+              didOpen: (modal) => {
+                console.log(modal)
+              },
+            }).then((result) => {
+              console.log(result)
+            })
+          })
+        })
       })
-    </script>
-  </body>
+    })
+  </script>
+</body>
+
 </html>

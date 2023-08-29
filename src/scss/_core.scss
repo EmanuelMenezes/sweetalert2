@@ -22,6 +22,7 @@ div:where(.swal2-container) {
   &.swal2-backdrop-show,
   &.swal2-noanimation {
     background: $swal2-backdrop;
+    backdrop-filter: blur(2px);
   }
 
   &.swal2-backdrop-hide {
@@ -169,6 +170,7 @@ div:where(.swal2-container) {
     width: $swal2-actions-width;
     margin: $swal2-actions-margin;
     padding: $swal2-actions-padding;
+    flex-direction: row-reverse;
 
     &:not(.swal2-loading) {
       .swal2-styled {
@@ -207,6 +209,8 @@ div:where(.swal2-container) {
     transition: $swal2-button-transition;
     box-shadow: $swal2-button-box-shadow;
     font-weight: $swal2-button-font-weight;
+    width: 100%;
+    height: 48px;
 
     &:not([disabled]) {
       cursor: pointer;
@@ -220,10 +224,6 @@ div:where(.swal2-container) {
       background-color: $swal2-confirm-button-background-color;
       color: $swal2-confirm-button-color;
       font-size: $swal2-confirm-button-font-size;
-
-      &:focus {
-        box-shadow: $swal2-confirm-button-focus-box-shadow;
-      }
     }
 
     &.swal2-deny {
@@ -234,10 +234,6 @@ div:where(.swal2-container) {
       background-color: $swal2-deny-button-background-color;
       color: $swal2-deny-button-color;
       font-size: $swal2-deny-button-font-size;
-
-      &:focus {
-        box-shadow: $swal2-deny-button-focus-box-shadow;
-      }
     }
 
     &.swal2-cancel {
@@ -248,16 +244,6 @@ div:where(.swal2-container) {
       background-color: $swal2-cancel-button-background-color;
       color: $swal2-cancel-button-color;
       font-size: $swal2-cancel-button-font-size;
-
-      &:focus {
-        box-shadow: $swal2-cancel-button-focus-box-shadow;
-      }
-    }
-
-    &.swal2-default-outline {
-      &:focus {
-        box-shadow: $swal2-button-focus-box-shadow;
-      }
     }
 
     &:focus {
@@ -276,6 +262,7 @@ div:where(.swal2-container) {
     color: $swal2-footer-color;
     font-size: $swal2-footer-font-size;
     text-align: $swal2-footer-text-align;
+    display: flex;
   }
 
   .swal2-timer-progress-bar-container {
@@ -331,7 +318,7 @@ div:where(.swal2-container) {
 
     &:focus {
       outline: $swal2-close-button-focus-outline;
-      box-shadow: $swal2-close-button-focus-box-shadow;
+      //box-shadow: $swal2-close-button-focus-box-shadow;
     }
 
     &::-moz-focus-inner {
@@ -384,7 +371,7 @@ div:where(.swal2-container) {
     &:focus {
       border: $swal2-input-focus-border;
       outline: $swal2-input-focus-outline;
-      box-shadow: $swal2-input-focus-box-shadow;
+      //box-shadow: $swal2-input-focus-box-shadow;
     }
 
     &::placeholder {

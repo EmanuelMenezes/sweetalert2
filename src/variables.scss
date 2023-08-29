@@ -6,11 +6,11 @@ $swal2-outline-color: rgba(100, 150, 200, 0.5) !default;
 $swal2-container-padding: 0.625em !default;
 
 // POPUP
-$swal2-width: 32em !default;
+$swal2-width: 25em !default;
 $swal2-padding: 0 0 1.25em !default;
 $swal2-border: none !default;
 $swal2-color: lighten($swal2-black, 33) !default;
-$swal2-border-radius: 5px !default;
+$swal2-border-radius: 8px !default;
 $swal2-box-shadow: #d9d9d9 !default;
 
 // ANIMATIONS
@@ -25,23 +25,23 @@ $swal2-font: inherit !default;
 $swal2-font-size: 1rem !default;
 
 // BACKDROP
-$swal2-backdrop: rgba($swal2-black, 0.4) !default;
+$swal2-backdrop: rgba($swal2-black, 0.25) !default;
 $swal2-backdrop-transition: background-color 0.1s !default;
 
 // ICONS
-$swal2-icon-size: 5em !default;
+$swal2-icon-size: 2.5em !default;
 $swal2-icon-animations: true !default;
 $swal2-icon-margin: 2.5em auto 0.6em !default;
 $swal2-icon-font-family: inherit !default;
-$swal2-icon-font-size: 3.75em !default;
+$swal2-icon-font-size: 1em !default;
 $swal2-icon-border-color: #000 !default;
 $swal2-icon-zoom: null !default;
-$swal2-success: #a5dc86 !default;
+$swal2-success: #0ba180 !default;
 $swal2-success-border: rgba($swal2-success, 0.3) !default;
-$swal2-error: #f27474 !default;
+$swal2-error: #ce2f23 !default;
 $swal2-warning: #f8bb86 !default;
-$swal2-info: #3fc3ee !default;
-$swal2-question: #87adbd !default;
+$swal2-info: #8462b0 !default;
+$swal2-question: #8462b0 !default;
 
 // IMAGE
 $swal2-image-margin: 2em auto 1em !default;
@@ -174,19 +174,19 @@ $swal2-close-button-focus-outline: none !default;
 $swal2-close-button-focus-box-shadow: inset 0 0 0 3px $swal2-outline-color !default;
 
 // ACTIONS
-$swal2-actions-flex-wrap: wrap !default;
+$swal2-actions-flex-wrap: nowrap !default;
 $swal2-actions-align-items: center !default;
 $swal2-actions-justify-content: center !default;
 $swal2-actions-width: auto !default;
-$swal2-actions-margin: 1.25em auto 0 !default;
+$swal2-actions-margin: 1.25em 1em 0 !default;
 $swal2-actions-padding: 0 !default;
 
 // COMMON VARIABLES FOR ALL ACTION BUTTONS
-$swal2-button-margin: 0.3125em !default;
+$swal2-button-margin: 0.5em !default;
 $swal2-button-padding: 0.625em 1.1em !default;
 $swal2-button-transition: box-shadow 0.1s !default;
 $swal2-button-box-shadow: 0 0 0 3px transparent !default;
-$swal2-button-font-weight: 500 !default;
+$swal2-button-font-weight: 600 !default;
 $swal2-button-darken-hover: rgba($swal2-black, 0.1) !default;
 $swal2-button-darken-active: rgba($swal2-black, 0.2) !default;
 $swal2-button-focus-outline: none !default;
@@ -195,8 +195,8 @@ $swal2-button-focus-box-shadow: 0 0 0 3px $swal2-outline-color !default;
 // CONFIRM BUTTON
 $swal2-confirm-button-order: null !default;
 $swal2-confirm-button-border: 0 !default;
-$swal2-confirm-button-border-radius: 0.25em !default;
-$swal2-confirm-button-background-color: #7066e0 !default;
+$swal2-confirm-button-border-radius: 24px !default;
+$swal2-confirm-button-background-color: #fa6300 !default;
 $swal2-confirm-button-color: $swal2-white !default;
 $swal2-confirm-button-font-size: 1em !default;
 $swal2-confirm-button-focus-box-shadow: 0 0 0 3px rgba($swal2-confirm-button-background-color, 0.5) !default;
@@ -204,18 +204,18 @@ $swal2-confirm-button-focus-box-shadow: 0 0 0 3px rgba($swal2-confirm-button-bac
 // DENY BUTTON
 $swal2-deny-button-order: null !default;
 $swal2-deny-button-border: 0 !default;
-$swal2-deny-button-border-radius: 0.25em !default;
-$swal2-deny-button-background-color: #dc3741 !default;
+$swal2-deny-button-border-radius: 24px !default;
+$swal2-deny-button-background-color: #cf3f00 !default;
 $swal2-deny-button-color: $swal2-white !default;
 $swal2-deny-button-font-size: 1em !default;
 $swal2-deny-button-focus-box-shadow: 0 0 0 3px rgba($swal2-deny-button-background-color, 0.5) !default;
 
 // CANCEL BUTTON
 $swal2-cancel-button-order: null !default;
-$swal2-cancel-button-border: 0 !default;
-$swal2-cancel-button-border-radius: 0.25em !default;
-$swal2-cancel-button-background-color: #6e7881 !default;
-$swal2-cancel-button-color: $swal2-white !default;
+$swal2-cancel-button-border: 1px solid #cf3f00 !default;
+$swal2-cancel-button-border-radius: 24px !default;
+$swal2-cancel-button-background-color: transparent !default;
+$swal2-cancel-button-color: #cf3f00 !default;
 $swal2-cancel-button-font-size: 1em !default;
 $swal2-cancel-button-focus-box-shadow: 0 0 0 3px rgba($swal2-cancel-button-background-color, 0.5) !default;
 

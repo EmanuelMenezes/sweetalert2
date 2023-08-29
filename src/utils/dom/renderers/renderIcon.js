@@ -60,40 +60,9 @@ const applyStyles = (icon, params) => {
   // Icon color
   setColor(icon, params)
 
-  // Success icon background color
-  adjustSuccessIconBackgroundColor()
-
   // Custom class
   dom.applyCustomClass(icon, params, 'icon')
 }
-
-// Adjust success icon background color to match the popup background color
-const adjustSuccessIconBackgroundColor = () => {
-  const popup = dom.getPopup()
-  if (!popup) {
-    return
-  }
-  const popupBackgroundColor = window.getComputedStyle(popup).getPropertyValue('background-color')
-  /** @type {NodeListOf<HTMLElement>} */
-  const successIconParts = popup.querySelectorAll('[class^=swal2-success-circular-line], .swal2-success-fix')
-  for (let i = 0; i < successIconParts.length; i++) {
-    successIconParts[i].style.backgroundColor = popupBackgroundColor
-  }
-}
-
-const successIconHtml = `
-  <div class="swal2-success-circular-line-left"></div>
-  <span class="swal2-success-line-tip"></span> <span class="swal2-success-line-long"></span>
-  <div class="swal2-success-ring"></div> <div class="swal2-success-fix"></div>
-  <div class="swal2-success-circular-line-right"></div>
-`
-
-const errorIconHtml = `
-  <span class="swal2-x-mark">
-    <span class="swal2-x-mark-line-left"></span>
-    <span class="swal2-x-mark-line-right"></span>
-  </span>
-`
 
 /**
  * @param {HTMLElement} icon
@@ -107,16 +76,17 @@ const setContent = (icon, params) => {
   let newContent = ''
   if (params.iconHtml) {
     newContent = iconContent(params.iconHtml)
-  } else if (params.icon === 'success') {
-    newContent = successIconHtml
-    oldContent = oldContent.replace(/ style=".*?"/g, '') // undo adjustSuccessIconBackgroundColor()
-  } else if (params.icon === 'error') {
-    newContent = errorIconHtml
   } else if (params.icon) {
     const defaultIconHtml = {
-      question: '?',
-      warning: '!',
-      info: 'i',
+      question:
+        '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512"><path fill="#8462b0" d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg>',
+      warning:
+        '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 64 512"><path fill="#f8bb86" d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V320c0 17.7 14.3 32 32 32s32-14.3 32-32V64zM32 480a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg>',
+      info: '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 64 512"><path fill="#8462b0" d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V320c0 17.7 14.3 32 32 32s32-14.3 32-32V64zM32 480a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg>',
+      success:
+        '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path fill="#0ba180" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>',
+      error:
+        '<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><path fill="#ce2f23" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>',
     }
     newContent = iconContent(defaultIconHtml[params.icon])
   }
